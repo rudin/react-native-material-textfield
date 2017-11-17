@@ -44,10 +44,12 @@ export default class TextField extends PureComponent {
 
     disabled: false,
     disabledLineType: 'dotted',
+    InputComponent: TextInput,
   };
 
   static propTypes = {
     ...TextInput.propTypes,
+    InputComponent: PropTypes.element,
 
     animationDuration: PropTypes.number,
 
@@ -329,6 +331,7 @@ export default class TextField extends PureComponent {
       errorColor,
       containerStyle,
       inputContainerStyle: inputContainerStyleOverrides,
+      InputComponent,
       ...props
     } = this.props;
 
@@ -482,7 +485,7 @@ export default class TextField extends PureComponent {
           <View style={styles.row}>
             {this.renderAffix('prefix', active, focused)}
 
-            <TextInput
+            <InputComponent
               style={[styles.input, inputStyle, inputStyleOverrides]}
               selectionColor={tintColor}
 
