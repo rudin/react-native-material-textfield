@@ -486,7 +486,7 @@ export default class TextField extends PureComponent {
             {this.renderAffix('prefix', active, focused)}
 
             <InputComponent
-              style={[styles.input, inputStyle, inputStyleOverrides]}
+              style={[styles.input, inputStyle, inputStyleOverrides, {opacity: count>0 || focused? 1 : 0}]}
               selectionColor={tintColor}
 
               {...props}
