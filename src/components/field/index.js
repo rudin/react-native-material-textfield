@@ -169,7 +169,7 @@ export default class TextField extends PureComponent {
   focus() {
     let { disabled, editable } = this.props;
 
-    if (!disabled && editable) {
+    if (!disabled && editable && 'focus' in this.input) {
       this.input.focus();
     }
   }
