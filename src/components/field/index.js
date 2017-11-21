@@ -44,12 +44,13 @@ export default class TextField extends PureComponent {
 
     disabled: false,
     disabledLineType: 'dotted',
+
     InputComponent: TextInput,
+    inputRef: 'ref'
   };
 
   static propTypes = {
     ...TextInput.propTypes,
-    InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
 
     animationDuration: PropTypes.number,
 
@@ -80,6 +81,8 @@ export default class TextField extends PureComponent {
     disabledLineType: Line.propTypes.type,
 
     renderAccessory: PropTypes.func,
+    InputComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    inputRef: PropTypes.string,
 
     prefix: PropTypes.string,
     suffix: PropTypes.string,
