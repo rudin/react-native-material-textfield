@@ -478,7 +478,8 @@ export default class TextField extends PureComponent {
       style: titleTextStyle,
     };
 
-    let inputRef = { [this.props.inputRef]: this.updateRef }
+    const { refPointer } = this.props
+    const getRef = {[refPointer || 'ref']: this.updateRef}
 
     return (
       <View {...containerProps}>
@@ -503,7 +504,7 @@ export default class TextField extends PureComponent {
               onFocus={this.onFocus}
               onBlur={this.onBlur}
               value={value}
-              {...inputRef}
+              {...getRef}
             />
 
             {this.renderAffix('suffix', active, focused)}
