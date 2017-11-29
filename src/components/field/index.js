@@ -45,8 +45,7 @@ export default class TextField extends PureComponent {
     disabled: false,
     disabledLineType: 'dotted',
 
-    InputComponent: TextInput,
-    inputRef: 'ref'
+    InputComponent: TextInput
   };
 
   static propTypes = {
@@ -164,6 +163,7 @@ export default class TextField extends PureComponent {
 
   updateRef(name, ref) {
     this[name] = ref;
+    this.props.inputRef && this.props.inputRef(ref)
   }
 
   focus() {
