@@ -164,6 +164,7 @@ export default class TextField extends PureComponent {
   updateRef(name, ref) {
     this[name] = ref;
     this.props.inputRef && this.props.inputRef(ref)
+    this.props.fieldRef && this.props.fieldRef(ref)
   }
 
   focus() {
